@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
+import getPostData from './reducer_post';
 
 const rootReducer = combineReducers({
-  state: (state = {}) => state
+   getPostData: getPostData
 });
 
 export default rootReducer;
