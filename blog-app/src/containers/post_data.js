@@ -1,18 +1,20 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import getPostsData from '../actions/index';
+import {getPostsData} from '../actions/index';
 
 class PostButton extends Component{
 
 	constructor(props){
 		super(props);
+
+		this.GetPostData = this.GetPostData.bind(this);
 	}
 
-	getPostData(event){
+	GetPostData(event){
 		event.preventDefault();
 
-
+		//console.log(this.props.getPostsData());
 		this.props.getPostsData();
 	
 	} 
@@ -20,7 +22,7 @@ class PostButton extends Component{
 	render(){
 		return(
 			<div style={{marginTop: 50 + 'px'}}>
-					<button className="btn btn-success" onClick={this.getPostData}>Click Here to Load Posts</button>
+					<button className="btn btn-success" onClick={this.GetPostData}>Click Here to Load Posts</button>
 			</div>
 		)
 	}

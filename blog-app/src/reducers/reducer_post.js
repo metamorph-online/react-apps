@@ -1,10 +1,11 @@
-import GET_DATA from '../actions/index';
+import {GET_POSTS_DATA} from '../actions/index';
 
 export default function(state = [], action){
+	//console.log(action);
 	switch (action.type){
 
-		case GET_DATA:
-		return [ action.payload.data, ...state] //the same as state.concat([action.payload.data]);
+		case GET_POSTS_DATA:
+		return [action.payload, ...state] //the same as state.concat([action.payload]);
 	}
 
 	return state;

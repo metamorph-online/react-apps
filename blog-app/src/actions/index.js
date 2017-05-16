@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const GET_DATA = 'getPostsData';
+export const GET_POSTS_DATA = 'GET_POSTS_DATA';
 
 export function getPostsData() {
 	const url = `https://jsonplaceholder.typicode.com/posts`;
@@ -9,7 +9,7 @@ export function getPostsData() {
 	console.log(request);
 
 	return{
-		type: getPostData,
+		type: GET_POSTS_DATA,
 		payload: request
 	}
 }
