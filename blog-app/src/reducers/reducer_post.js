@@ -1,9 +1,12 @@
-import GET_DATA from '../actions/index';
+import GET_BOOKS from '../actions/index';
 
-export default function(state = [], action){
+const INITIAL_STATE = { all: [], post: null };
+
+export default function(state = INITIAL_STATE, action){
+	
 	switch (action.type){
 
-		case GET_DATA:
+		case GET_BOOKS:
 		return [ action.payload.data, ...state] //the same as state.concat([action.payload.data]);
 	}
 

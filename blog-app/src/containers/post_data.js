@@ -1,33 +1,29 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
-import getPostsData from '../actions/index';
+import {getBooksData} from '../actions/index';
 
-class PostButton extends Component{
+class BooksIndex extends Component{
 
 	constructor(props){
 		super(props);
+		this.props.getBooksData();
 	}
-
-	getPostData(event){
-		event.preventDefault();
-
-
-		this.props.getPostsData();
-	
-	} 
 
 	render(){
 		return(
 			<div style={{marginTop: 50 + 'px'}}>
-					<button className="btn btn-success" onClick={this.getPostData}>Click Here to Load Posts</button>
+					
 			</div>
 		)
 	}
 }
 
-function mapDispatchToProps(dispatch){
-	return bindActionCreators({getPostsData}, dispatch);
+function mapStateToProps(state){
+	
+	return {
+		books: state.books.all
+	}
+	
 }
 
-export default connect(null, mapDispatchToProps)(PostButton);
+export default connect(mapStateToProps, {getBooksData})(BooksIndex);

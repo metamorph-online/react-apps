@@ -1,15 +1,15 @@
 import axios from 'axios';
 
-export const GET_DATA = 'getPostsData';
+export const GET_BOOKS = 'GET_BOOKS';
 
-export function getPostsData() {
-	const url = `https://jsonplaceholder.typicode.com/posts`;
+export function getBooksData() {
+	const url = `http://localhost:3000/books/`;
 
 	const request = axios.get(url);
 	console.log(request);
 
 	return{
-		type: getPostData,
+		type: GET_BOOKS,
 		payload: request
 	}
 }
