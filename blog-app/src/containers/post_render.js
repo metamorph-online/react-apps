@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 class PostRender extends Component{
 
 	postList(PostData){
-		console.log(PostData);
+		//console.log(PostData);
 		return(
 			PostData.data.map(function(post){
 				return(

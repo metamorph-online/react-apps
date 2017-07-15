@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import BooksIndex from '../containers/post_data';
+import { Link } from 'react-router'
 
 export default class App extends Component {
+
   render() {
     return (
       <div>
-      		<BooksIndex />
+      		{this.props.children}
       </div>
     );
   }
