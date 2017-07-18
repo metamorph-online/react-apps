@@ -1,0 +1,68 @@
+{
+  "books": [
+    {
+      "id": "978-0641723445",
+      "cat": [
+        "book",
+        "hardcover"
+      ],
+      "name": "Python Crash Course: A Hands-On, Project-Based Introduction to Programming",
+      "author": "Eric Matthes",
+      "sequence_i": 1,
+      "genre_s": "Web Development & Design Programming",
+      "inStock": true,
+      "price": 24.17,
+      "pages_i": 384,
+      "cover_img": "http://localhost:8080/images/book_cover1.jpg",
+      "description": "Python Crash Course is a fast-paced, thorough introduction to programming with Python that will have you writing programs, solving problems, and making things that work in no time.<br /><br />In the first half of the book, you'll learn about basic programming concepts, such as lists, dictionaries, classes, and loops, and practice writing clean and readable code with exercises for each topic. You'll also learn how to make your programs interactive and how to test your code safely before adding it to a project. In the second half of the book, you'll put your new knowledge into practice with three substantial projects: a Space Invaders-inspired arcade game, data visualizations with Python's super-handy libraries, and a simple web app you can deploy online.<br /><br />As you work through Python Crash Course, you'll learn how to:<br /><br />Use powerful Python libraries and tools, including matplotlib, NumPy, and Pygal<br />Make 2D games that respond to keypresses and mouse clicks, and that grow more difficult as the game progresses<br />Work with data to generate interactive visualizations<br />Create and customize simple web apps and deploy them safely online<br />Deal with mistakes and errors so you can solve your own programming problems<br /><br />If you've been thinking seriously about digging into programming, Python Crash Course will get you up to speed and have you writing real programs fast. Why wait any longer? Start your engines and code!"
+    },
+    {
+      "id": "978-1423103349",
+      "cat": [
+        "book",
+        "paperback"
+      ],
+      "name": "CSS for Babies (Code Babies)",
+      "author": "Sterling Children's",
+      "sequence_i": 2,
+      "genre_s": "Web Development",
+      "inStock": true,
+      "price": 16.49,
+      "pages_i": 304,
+      "cover_img": "http://localhost:8080/images/book_cover2.jpg",
+      "description": "CODING FOR KIDS . . . <br />Because it’s never too early to start developing!<br /><br />Coding and web-design skills are becoming more and more important in our technological world. These concept books will familiarize young ones with the kind of shapes and colors that make up web-based programming language and give them the head start they need.<br />Show your little ones how to display HTML elements properly with CSS (Cascading Style Sheets) and familiarize them with the visual patterns and symbols that make up the essential building blocks of the web. This beautiful book is a colorful introduction to coding and the web, and is the perfect gift for any technologically minded family."
+    },
+    {
+      "id": "978-1857995879",
+      "cat": [
+        "book",
+        "paperback"
+      ],
+      "name": "HTML and CSS: Design and Build Websites ",
+      "author": "Jon Duckett",
+      "sequence_i": 1,
+      "genre_s": "Programming Languages",
+      "inStock": true,
+      "price": 27.07,
+      "pages_i": 64,
+      "cover_img": "http://localhost:8080/images/book_cover3.jpg",
+      "description": "A full-color introduction to the basics of HTML and CSS from the publishers of Wrox!<br />Every day, more and more people want to learn some HTML and CSS. Joining the professional web designers and programmers are new audiences who need to know a little bit of code at work (update a content management system or e-commerce store) and those who want to make their personal blogs more attractive. Many books teaching HTML and CSS are dry and only written for those who want to become programmers, which is why this book takes an entirely new approach.<br /><br />Introduces HTML and CSS in a way that makes them accessible to everyone—hobbyists, students, and professionals—and it’s full-color throughout<br />Utilizes information graphics and lifestyle photography to explain the topics in a simple way that is engaging<br />Boasts a unique structure that allows you to progress through the chapters from beginning to end or just dip into topics of particular interest at your leisure<br />This educational book is one that you will enjoy picking up, reading, then referring back to. It will make you wish other technical topics were presented in such a simple, attractive and engaging way!<br /><br />This book is also available as part of a set in hardcover - Web Design with HTML, CSS, JavaScript and jQuery"
+    },
+    {
+      "id": "978-1933988177",
+      "cat": [
+        "book",
+        "paperback"
+      ],
+      "name": "Clean Code: A Handbook of Agile Software Craftsmanship",
+      "author": "Robert C. Martin",
+      "sequence_i": 1,
+      "genre_s": "Programming Languages",
+      "inStock": true,
+      "price": 39.99,
+      "pages_i": 475,
+      "cover_img": "http://localhost:8080/images/book_cover4.jpg",
+      "description": "Even bad code can function. But if code isn’t clean, it can bring a development organization to its knees. Every year, countless hours and significant resources are lost because of poorly written code. But it doesn’t have to be that way.<br> <br>Noted software expert Robert C. Martin presents a revolutionary paradigm with <i> <b>Clean Code: A Handbook of Agile Software Craftsmanship</b> </i>. Martin has teamed up with his colleagues from Object Mentor to distill their best agile practice of cleaning code “on the fly” into a book that will instill within you the values of a software craftsman and make you a better programmer—but only if you work at it.<br> <br>What kind of work will you be doing? You’ll be reading code—lots of code. And you will be challenged to think about what’s right about that code, and what’s wrong with it. More importantly, you will be challenged to reassess your professional values and your commitment to your craft.<br> <br> <i> <b>Clean Code</b> </i> is divided into three parts. The first describes the principles, patterns, and practices of writing clean code. The second part consists of several case studies of increasing complexity. Each case study is an exercise in cleaning up code—of transforming a code base that has some problems into one that is sound and efficient. The third part is the payoff: a single chapter containing a list of heuristics and “smells” gathered while creating the case studies. The result is a knowledge base that describes the way we think when we write, read, and clean code.<br> <br>Readers will come away from this book understanding<br> <ul> <li>How to tell the difference between good and bad code</li> <li>How to write good code and how to transform bad code into good code</li> <li>How to create good names, good functions, good objects, and good classes</li> <li>How to format code for maximum readability</li> <li>How to implement complete error handling without obscuring code logic</li> <li>How to unit test and practice test-driven development</li> </ul>This book is a must for any developer, software engineer, project manager, team lead, or systems analyst with an interest in producing better code.<br> <br>"
+    }
+  ]
+}
