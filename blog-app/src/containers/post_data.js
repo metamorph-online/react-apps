@@ -31,7 +31,7 @@ class BooksIndex extends Component{
 										<li className="list-group-item">Pages: {book.pages_i}</li>
 										<li className="list-group-item">Genre: {book.genre_s}</li>
 										<li className="list-group-item">Price: {book.price}</li>
-										<li className="list-group-item">Series: {renderHTML(book.description)}</li>
+										<li className="list-group-item">Description: <div className="description-frame">{renderHTML(book.description)}</div><div className="view-all" onClick={this.descriptionChange.bind(this)}>View All</div></li>
 									</ul>
 								</div>
 						</li>
@@ -44,11 +44,7 @@ class BooksIndex extends Component{
 
 	render(){
 
-		console.log(this.props.books);
-
 		let myLoader = <div className="my-loader"><img src="https://cdnjs.cloudflare.com/ajax/libs/timelinejs/2.25/css/loading.gif" alt="" /></div>;
-
-
 
 		return(
 			<div style={{marginTop: 50 + 'px'}}>
@@ -62,8 +58,6 @@ class BooksIndex extends Component{
 
 function mapStateToProps(state){
 
-	//console.log(state);
-	
 	return {
 		books: state.books.all.books
 	}
