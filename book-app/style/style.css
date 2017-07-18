@@ -43,3 +43,8 @@
     display: block;
     clear: both;
 }
+
+.closed{
+	height: 140px;
+	overflow: hidden;
+}
