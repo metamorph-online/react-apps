@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import BookDescription from './description_render';
+import AddToCart from '../containers/add_to_cart';
 
 
 export default class RenderBooks extends Component{
@@ -12,7 +13,7 @@ export default class RenderBooks extends Component{
 
 		return(
 
-		<div>
+		<div className="col-md-10">
 			<h3>List of available books</h3>
 
 			<ul className="list-group">
@@ -30,6 +31,7 @@ export default class RenderBooks extends Component{
 										<li className="list-group-item">Genre: {book.genre_s}</li>
 										<li className="list-group-item">Price: {book.price}</li>
 										<li className="list-group-item"><BookDescription description={book.description}></BookDescription></li>
+										<li className="list-group-item"><AddToCart book={book}></AddToCart></li>
 									</ul>
 								</div>
 						</li>

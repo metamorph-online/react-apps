@@ -1,12 +1,17 @@
+/* component generates list of books on the first load */
+
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {getBooksData} from '../actions/index';
-import RenderBooks from '../components/book_render';
+import RenderBooks from '../components/books_render';
+import ShoppingCart from './shopping_cart';
 
 class BooksIndex extends Component{
 
 	constructor(props){
 		super(props);
+
+		/* getting list of books with the action creator */
 		this.props.getBooksData();
 	}
 	
@@ -17,8 +22,10 @@ class BooksIndex extends Component{
 
 		return(
 			<div style={{marginTop: 50 + 'px'}}>
+
+				<ShoppingCart></ShoppingCart>
 				
-				{ this.props.books == undefined ? myLoader : <RenderBooks books={this.props.books} />/* this.renderBooks()*/}
+				{ this.props.books == undefined ? myLoader : <RenderBooks books={this.props.books} />}
 
 			</div>			
 		)
