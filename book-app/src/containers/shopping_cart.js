@@ -10,18 +10,34 @@ class ShoppingCart extends Component{
 		super(props);
 	}
 
+	shoppingCart(){
+		console.log(this.props.cart);
+		return(
+			this.props.cart.map(function(book){
+				return(
+					<div className="some">{book.name}</div>
+				);
+			})
+		);
+	}
+
 	render(){
 
 		return(
-			<div className="col-md-2"><h5>Shopping Cart</h5></div>
+			<div className="col-md-2">
+				<h5>Shopping Cart</h5>
+				<div>{this.shoppingCart()}</div>
+			</div>
 		);
 	}
 }
 
 function mapStateToProps(state){
 
+	//console.log(state.cart.cart);
+
 	return {
-		
+		cart: state.cart.cart
 	}
 	
 }
