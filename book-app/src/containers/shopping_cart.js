@@ -16,7 +16,7 @@ class ShoppingCart extends Component{
 
 		let total = 0;
 		for(var i=0; i<this.props.cart.length; i++){
-		    total += this.props.cart[i].price;
+		    total += this.props.cart[i].book.price;
 		}
 	
 		return total.toFixed(2);
@@ -26,12 +26,12 @@ class ShoppingCart extends Component{
 	shoppingCart(){
 
 		return(
-			this.props.cart.map(function(book, index){
-				console.log(book);
+			this.props.cart.map(function(item, index){
+
 				return(
 					<li className="list-group-item" key={index}>
-						<div className="row"><div className="col-md-12"><h4>{book.name}</h4></div></div>
-						<div className="row"><div className="col-md-6 price-middle">Price: <strong className="red">$ {book.price}</strong></div><RemoveFromCart book={book}></RemoveFromCart></div>
+						<div className="row"><div className="col-md-12"><h4>{item.book.name}</h4></div></div>
+						<div className="row"><div className="col-md-6 price-middle">Price: <strong className="red">$ {item.book.price}</strong></div><RemoveFromCart book={item.book}></RemoveFromCart></div>
 						
 					</li>
 				);
@@ -46,7 +46,7 @@ class ShoppingCart extends Component{
 			<div className="shopping-cart">
 				<ul className="list-group">
 					<li className="list-group-item active"><h5>Shopping Cart</h5></li>
-					this.props.cart ? {this.shoppingCart()} : ''
+					{this.shoppingCart()}
 					<li className="list-group-item">Total: {this.totalCart()}</li>
 				</ul>				
 			</div>
