@@ -48,3 +48,25 @@
 	height: 140px;
 	overflow: hidden;
 }
+
+/* .shopping-cart{
+	position: fixed!important;
+} 
+
+.books-list{
+	float: right!important
+}*/
+
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+
+.price-middle{
+	padding-top: 10px;
+}
+
+.red{
+	color: #ff0000;
+}

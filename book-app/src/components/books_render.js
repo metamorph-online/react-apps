@@ -13,7 +13,7 @@ export default class RenderBooks extends Component{
 
 		return(
 
-		<div className="col-md-10">
+		<div className="col-md-9">
 			<h3>List of available books</h3>
 
 			<ul className="list-group">
