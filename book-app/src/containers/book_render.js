@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
-class PostRender extends Component{
+class BookRender extends Component{
 
 	postList(PostData){
 		//console.log(PostData);
@@ -30,7 +30,7 @@ class PostRender extends Component{
 
 function mapSateToProps(state){
 	console.log(state);
-	return {post: state.getPostData}
+	return {post: state.getBookData}
 }
 
-export default connect(mapSateToProps)(PostRender)
+export default connect(mapSateToProps)(BookRender)
