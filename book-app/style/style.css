@@ -70,3 +70,7 @@
 .red{
 	color: #ff0000;
 }
+
+.view-all{
+	cursor: pointer;
+}

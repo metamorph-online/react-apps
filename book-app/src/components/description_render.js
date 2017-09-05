@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
-
+//component that used to render html from string 
 import renderHTML from 'react-render-html';
 
+
+//book description slide up/down
 export default class BookDescription extends Component{
 
 		constructor(props){

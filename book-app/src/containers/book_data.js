@@ -21,11 +21,9 @@ class BooksIndex extends Component{
 		let myLoader = <div className="my-loader"><img src="https://cdnjs.cloudflare.com/ajax/libs/timelinejs/2.25/css/loading.gif" alt="" /></div>;
 
 		return(
-			<div style={{marginTop: 50 + 'px'}} className="row">
-
-				<ShoppingCart></ShoppingCart>
+			<div style={{marginTop: 50 + 'px'}} className="row">				
 				
-				{ this.props.books == undefined ? myLoader : <RenderBooks books={this.props.books} />}
+				{ this.props.books == undefined ? myLoader : <ShoppingCart></ShoppingCart><RenderBooks books={this.props.books} />}
 
 			</div>			
 		)

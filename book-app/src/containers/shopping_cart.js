@@ -17,9 +17,9 @@ class ShoppingCart extends Component{
 
 
 		let total = 0;
-		/* for(var i=0; i<this.props.cart.length; i++){
+		for(var i=0; i<this.props.cart.length; i++){
 		    total += this.props.cart[i].book.price;
-		} */
+		}
 	
 		return total.toFixed(2);
 	}
@@ -47,10 +47,10 @@ class ShoppingCart extends Component{
 
 	render(){
 
-		//console.log(this.props.cart);
+		console.log(this.props.cart);
 
 		//cart has state values
-		if(this.props.cart[0] !== undefined && this.props.cart[0].length > 0){
+		if(this.props.cart !== undefined && this.props.cart.length > 0){
 
 			return(
 				<div className="col-md-3">
@@ -86,7 +86,7 @@ function mapStateToProps(state){
 
 	//console.log(state);
 	return {
-		cart: state.cart
+		cart: state.cart.cart
 	}
 	
 }
