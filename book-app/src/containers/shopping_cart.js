@@ -53,7 +53,6 @@ class ShoppingCart extends Component{
 		if(this.props.cart !== undefined && this.props.cart.length > 0){
 
 			return(
-				<div className="col-md-3">
 					<div className="shopping-cart">
 						<ul className="list-group">
 							<li className="list-group-item active"><h5>Shopping Cart</h5></li>
@@ -61,13 +60,11 @@ class ShoppingCart extends Component{
 							<li className="list-group-item">Total: $ {this.totalCart()}</li>
 						</ul>				
 					</div>
-				</div>
 			);
 		} else {
 
 			//cart is empty
 			return(
-				<div className="col-md-3">
 					<div className="shopping-cart">
 						<ul className="list-group">
 							<li className="list-group-item active"><h5>Shopping Cart</h5></li>
@@ -75,7 +72,6 @@ class ShoppingCart extends Component{
 							<li className="list-group-item">Total: $ 0</li>
 						</ul>				
 					</div>
-				</div>
 			);
 
 		}

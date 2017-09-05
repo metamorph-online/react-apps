@@ -5,6 +5,7 @@ import {connect} from 'react-redux';
 import {getBooksData} from '../actions/index';
 import RenderBooks from '../components/books_render';
 import ShoppingCart from './shopping_cart';
+import LoginBox from './login_box';
 
 class BooksIndex extends Component{
 
@@ -23,7 +24,10 @@ class BooksIndex extends Component{
 		return(
 			<div style={{marginTop: 50 + 'px'}} className="row">				
 				
-				{ this.props.books == undefined ? myLoader : <ShoppingCart></ShoppingCart><RenderBooks books={this.props.books} />}
+				<div className="col-md-3"><LoginBox></LoginBox>
+				<ShoppingCart></ShoppingCart></div>
+
+				{ this.props.books == undefined ? myLoader : <RenderBooks books={this.props.books} />}
 
 			</div>			
 		)
