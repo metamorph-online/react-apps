@@ -8,7 +8,9 @@ import {createLogger} from 'redux-logger';
 
 import App from './components/app';
 import IndexBooks from './containers/book_data';
+import BookShow from './components/book_show';
 import reducers from './reducers';
+
 
 const logger = createLogger();
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise, logger)(createStore);
@@ -19,6 +21,7 @@ ReactDOM.render(
     <Router history={browserHistory}>
 	    <Route path='/' component={App}>
 	      <IndexRoute component={IndexBooks} />
+	      <Route path="book/:id" component={BookShow}></Route>
 	    </Route>
   </Router>
 

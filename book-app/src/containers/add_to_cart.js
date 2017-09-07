@@ -8,6 +8,8 @@ class AddToCart extends Component{
 
 	constructor(props){
 		super(props);
+
+		this.addToCart = this.addToCart.bind(this);
 	}
 
 
@@ -19,8 +21,8 @@ class AddToCart extends Component{
 	render(){		
 
 		return(
-			<div>				
-				<div className="btn btn-danger" onClick={this.addToCart.bind(this)}>Add To Cart</div>
+			<div className="my-inline-btns">				
+				<div className="btn btn-danger" onClick={this.addToCart}>Add To Cart</div>
 			</div>			
 		)
 	}
