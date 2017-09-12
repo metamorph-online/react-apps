@@ -4,6 +4,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {getBooksData} from '../actions/index';
 import RenderBooks from '../components/books_render';
+import Preloader from '../components/preloader';
 
 
 class BooksIndex extends Component{
@@ -18,13 +19,13 @@ class BooksIndex extends Component{
 
 	render(){
 
-		let myLoader = <div className="my-loader"><img src="https://cdnjs.cloudflare.com/ajax/libs/timelinejs/2.25/css/loading.gif" alt="" /></div>;
+		
 
 		return(
 			<div className="row">		
 				
 
-				{ this.props.books == undefined ? myLoader : <RenderBooks books={this.props.books} />}
+				{ this.props.books == undefined ? <Preloader /> : <RenderBooks books={this.props.books} />}
 
 			</div>			
 		)

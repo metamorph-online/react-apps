@@ -3,6 +3,7 @@ import axios from 'axios';
 export const GET_BOOKS = 'GET_BOOKS';
 export const ADD_TO_CART = 'ADD_TO_CART';
 export const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
+export const GET_BOOK = 'GET_BOOK';
 
 const ROOT_URL = 'http://localhost:3000';
 
@@ -39,7 +40,7 @@ export function fetchBook(id){
 	const request = axios.get(`${ROOT_URL}/books/${id}`);
 
 	return {
-		type: FETCH_POST,
+		type: GET_BOOK,
 		payload: request
 	}
 }

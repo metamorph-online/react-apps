@@ -1,3 +1,5 @@
+//component renders books array on the index page
+
 import React, {Component} from 'react';
 import BookDescription from './description_render';
 import AddToCart from '../containers/add_to_cart';

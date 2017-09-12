@@ -7,8 +7,8 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import {createLogger} from 'redux-logger';
 
 import App from './components/app';
-import IndexBooks from './containers/book_data';
-import BookShow from './components/book_show';
+import IndexBooks from './containers/books_data';
+import BookShow from './containers/book_show';
 import reducers from './reducers';
 
 
