@@ -97,3 +97,8 @@
 .my-inline-btns{
 	display: inline-block!important;
 }
+
+.breadcrumbs{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}

@@ -6,6 +6,7 @@ import {connect} from 'react-redux';
 import AddToCart from '../containers/add_to_cart';
 import Preloader from '../components/preloader';
 import renderHTML from 'react-render-html'; //for description generate
+import {Link} from 'react-router';
 
 export class BookShow extends Component{
 
@@ -18,6 +19,7 @@ export class BookShow extends Component{
 	renderBook(){
 		return(
 			<div>
+				<div className="row"><div className="col-md-12 breadcrumbs"><Link to={"/"}>Home</Link> > {this.props.book.name}</div></div>
 				<ul className="list-group">
 					<li key={this.props.book.id} className="list-group-item">
 									
@@ -26,7 +28,11 @@ export class BookShow extends Component{
 							<div className="book-info">
 								<ul className="list-group">
 									<li className="list-group-item active"><h4>Name: {this.props.book.name} </h4></li>
+									<li className="list-group-item"><strong>Author:</strong> {this.props.book.author}</li>
+									<li className="list-group-item"><strong>Book ID:</strong> {this.props.book.id}</li>
 									<li className="list-group-item"><strong>Genre:</strong> {this.props.book.genre_s}</li>
+									<li className="list-group-item"><strong>Pages:</strong> {this.props.book.pages_i}</li>
+									<li className="list-group-item"><strong>In Stock:</strong> {this.props.book.inStock ? 'Yes' : 'No'}</li>
 									<li className="list-group-item"><strong>Price:</strong> ${this.props.book.price}</li>
 									<li className="list-group-item">{renderHTML(this.props.book.description)}</li>
 									<li className="list-group-item"><AddToCart book={this.props.book}></AddToCart></li>
