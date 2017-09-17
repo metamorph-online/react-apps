@@ -4,14 +4,42 @@ import React, {Component} from 'react';
 import BookDescription from './description_render';
 import AddToCart from '../containers/add_to_cart';
 import {Link} from 'react-router';
+import InfiniteScroll from 'react-infinite-scroller';
 
 
 export default class RenderBooks extends Component{
 
 	constructor(props){
 		super(props);
+
+		let onPageBooks = this.props.books.slice(0, 5);
+		this.state = {books: onPageBooks, page : 1}
+
+		console.log(this.state);
 	}
 
+	loadMore(){
+
+		let pageNumber = this.state.page + 1;
+
+		this.setState({page: pageNumber});
+
+		let BooksNumber = pageNumber * 5;
+
+		if(BooksNumber > this.props.books.length){
+
+			this.InfiniteScroll.hasMore(false);
+		} 
+
+		this.setState({books: this.props.books.slice(0, BooksNumber)});
+
+		console.log(this.props.books.length);
+
+		console.log('ding');
+			
+	}
+
+	
 	render(){
 
 		return(
@@ -20,7 +48,14 @@ export default class RenderBooks extends Component{
 			<h3>List of available books</h3>
 
 			<ul className="list-group">
-				{this.props.books.map((book)=>{
+
+				<InfiniteScroll
+				    pageStart={0}
+				    loadMore={this.loadMore.bind(this)}
+				    hasMore={true || false}
+				    loader={<div className="loader">Loading ...</div>}
+				>
+				{this.state.books.map((book)=>{
 
 					return (
 						<li key={book.id} className="list-group-item">
@@ -40,6 +75,7 @@ export default class RenderBooks extends Component{
 						</li>
 					);
 				})}
+				</InfiniteScroll>
 			</ul>
 		</div>
 		);
