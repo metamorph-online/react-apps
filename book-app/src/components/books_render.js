@@ -13,7 +13,7 @@ export default class RenderBooks extends Component{
 		super(props);
 
 		let onPageBooks = this.props.books.slice(0, 5);
-		this.state = {books: onPageBooks, page : 1}
+		this.state = {books: onPageBooks, page : 1, over: true}
 
 		console.log(this.state);
 	}
@@ -28,7 +28,7 @@ export default class RenderBooks extends Component{
 
 		if(BooksNumber > this.props.books.length){
 
-			this.InfiniteScroll.hasMore(false);
+			this.setState({over: false});
 		} 
 
 		this.setState({books: this.props.books.slice(0, BooksNumber)});
@@ -52,7 +52,7 @@ export default class RenderBooks extends Component{
 				<InfiniteScroll
 				    pageStart={0}
 				    loadMore={this.loadMore.bind(this)}
-				    hasMore={true || false}
+				    hasMore={this.state.over}
 				    loader={<div className="loader">Loading ...</div>}
 				>
 				{this.state.books.map((book)=>{
