@@ -12,10 +12,10 @@ export default function(state = INITIAL_STATE, action){
 
 		case APPLY_FILTER:
 
-			var arr
+			var arr = { books: []};
 
 			if(action.payload == 2){  
-				arr = state.all.books.sort(function(a, b) {
+				arr.books = state.all.books.sort(function(a, b) {
 				    var textA = a.name.toUpperCase();
 				    var textB = b.name.toUpperCase();
 				    return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;

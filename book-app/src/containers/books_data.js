@@ -17,17 +17,27 @@ class BooksIndex extends Component{
 		/* getting list of books with the action creator */
 		this.props.getBooksData();
 
+		this.state = {books: this.props.books};
+
+
+		//if filters change state parent component should update the RenderBooks props
 		//filter state, needed to update component on filter update
 		var handleToUpdate	= this.handleToUpdate.bind(this);
-
 		this.state = {filterSwitcher: true};
+	}
+
+	componentWillReceiveProps(){
+		this.setState({books: this.props.books});
+		console.log(this.state);
 	}
 
 	handleToUpdate(someArg){
 		this.setState({filterSwitcher: someArg});
-		console.log('state updated');
+		this.setState({books: this.props.books});
+		console.log(this.props.books);
 	}
 	
+
 
 	render(){		
 
@@ -36,9 +46,8 @@ class BooksIndex extends Component{
 
 				{/* sortig component */}
 				<SortFilters handleToUpdate = {this.handleToUpdate.bind(this)}></SortFilters>
-				
 
-				{ this.props.books == undefined ? <Preloader /> : <RenderBooks books={this.props.books} />}
+				{ this.state.books == undefined ? <Preloader /> : <RenderBooks books={this.state.books} />}
 
 			</div>			
 		)
