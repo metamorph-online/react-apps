@@ -4,6 +4,7 @@ export const GET_BOOKS = 'GET_BOOKS';
 export const ADD_TO_CART = 'ADD_TO_CART';
 export const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
 export const GET_BOOK = 'GET_BOOK';
+export const APPLY_FILTER = 'APPLY_FILTER';
 
 const ROOT_URL = 'http://localhost:3000';
 
@@ -42,5 +43,13 @@ export function fetchBook(id){
 	return {
 		type: GET_BOOK,
 		payload: request
+	}
+}
+
+//filter results based on selected options
+export function filterApplied(myFilter){
+	return {
+		type: APPLY_FILTER,
+		payload: myFilter
 	}
 }

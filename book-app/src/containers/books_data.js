@@ -3,8 +3,10 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {getBooksData} from '../actions/index';
+import {filterApplied} from '../actions/index';
 import RenderBooks from '../components/books_render';
 import Preloader from '../components/preloader';
+import SortFilters from './sort_filters';
 
 
 class BooksIndex extends Component{
@@ -14,15 +16,26 @@ class BooksIndex extends Component{
 
 		/* getting list of books with the action creator */
 		this.props.getBooksData();
+
+		//filter state, needed to update component on filter update
+		var handleToUpdate	= this.handleToUpdate.bind(this);
+
+		this.state = {filterSwitcher: true};
+	}
+
+	handleToUpdate(someArg){
+		this.setState({filterSwitcher: someArg});
+		console.log('state updated');
 	}
 	
 
-	render(){
-
-		
+	render(){		
 
 		return(
-			<div className="row">		
+			<div className="row">
+
+				{/* sortig component */}
+				<SortFilters handleToUpdate = {this.handleToUpdate.bind(this)}></SortFilters>
 				
 
 				{ this.props.books == undefined ? <Preloader /> : <RenderBooks books={this.props.books} />}
