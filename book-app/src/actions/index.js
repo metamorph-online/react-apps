@@ -46,10 +46,3 @@ export function fetchBook(id){
 	}
 }
 
-//filter results based on selected options
-export function filterApplied(myFilter){
-	return {
-		type: APPLY_FILTER,
-		payload: myFilter
-	}
-}

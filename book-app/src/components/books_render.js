@@ -12,10 +12,16 @@ export default class RenderBooks extends Component{
 	constructor(props){
 		super(props);
 
+		//slice array to display 5 elements on the page
 		let onPageBooks = this.props.books.slice(0, 5);
 		this.state = {books: onPageBooks, page : 1, over: true}
 
 		console.log(this.state);
+	}
+
+	componentWillReceiveProps(nextProps) {
+		let onPageBooks = nextProps.books.slice(0, 5);
+	    this.setState({ books: onPageBooks });  
 	}
 
 	loadMore(){

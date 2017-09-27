@@ -17,24 +17,46 @@ class BooksIndex extends Component{
 		/* getting list of books with the action creator */
 		this.props.getBooksData();
 
-		this.state = {books: this.props.books};
+		this.state = {books: []};
 
 
 		//if filters change state parent component should update the RenderBooks props
 		//filter state, needed to update component on filter update
 		var handleToUpdate	= this.handleToUpdate.bind(this);
-		this.state = {filterSwitcher: true};
+		this.state = {filterSwitcher: false};
 	}
 
-	componentWillReceiveProps(){
-		this.setState({books: this.props.books});
-		console.log(this.state);
+	//check if promise was resolved and assigned to the state
+	shouldComponentUpdate(nextProps, nextState) {
+
+	   return this.state.books !== nextProps.books || nextState.filterSwitcher == true;
 	}
+
+	//assigns props to state
+	componentWillUpdate(nextProps, nextState){
+		
+		if(nextState.filterSwitcher == false){
+			this.setState({books: nextProps.books});
+		}
+
+		console.log(nextState);
+	} 
 
 	handleToUpdate(someArg){
-		this.setState({filterSwitcher: someArg});
-		this.setState({books: this.props.books});
-		console.log(this.props.books);
+
+		var arr = this.state.books;
+
+		if(someArg == 2){  
+				arr = arr.sort(function(a, b) {
+				    var textA = a.name.toUpperCase();
+				    var textB = b.name.toUpperCase();
+				    return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+				});
+
+			this.setState({books: arr, filterSwitcher: true}, );
+
+		}
+	
 	}
 	
 
