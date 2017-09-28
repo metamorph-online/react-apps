@@ -23,23 +23,27 @@ class BooksIndex extends Component{
 		//if filters change state parent component should update the RenderBooks props
 		//filter state, needed to update component on filter update
 		var handleToUpdate	= this.handleToUpdate.bind(this);
-		this.state = {filterSwitcher: false};
+		this.state = {stateSwitcher: false};
 	}
 
 	//check if promise was resolved and assigned to the state
 	shouldComponentUpdate(nextProps, nextState) {
 
-	   return this.state.books !== nextProps.books || nextState.filterSwitcher == true;
+	   return this.state.books !== nextProps.books || nextState.stateSwitcher !== this.state.stateSwitcher;
 	}
 
 	//assigns props to state
-	componentWillUpdate(nextProps, nextState){
+	componentWillUpdate(nextProps, nextState){		
 		
-		if(nextState.filterSwitcher == false){
-			this.setState({books: nextProps.books});
-		}
+		this.setState({books: nextProps.books});
+	}
 
-		console.log(nextState);
+	//take care of state change after filter applied
+	filterSetState(arr){
+		this.setState(prevState => ({
+	        stateSwitcher: !prevState.stateSwitcher,
+	        books: arr
+	    }));
 	}
 
 	//filter array by book title
@@ -52,7 +56,8 @@ class BooksIndex extends Component{
 			  return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
 			});
 
-		this.setState({books: arr, filterSwitcher: true});
+		//set new filtered state
+		this.filterSetState(arr);
 	}
 
 	//filter array by book price(price from lower to higher)
@@ -64,7 +69,8 @@ class BooksIndex extends Component{
 			  return A - B;
 			});
 
-		this.setState({books: arr, filterSwitcher: true});
+		//set new filtered state
+		this.filterSetState(arr);
 	}
 
 	//filter array by book price(price from higher to lower)
@@ -76,7 +82,8 @@ class BooksIndex extends Component{
 			  return B - A;
 			});
 
-		this.setState({books: arr, filterSwitcher: true});
+		//set new filtered state
+		this.filterSetState(arr);
 	}  
 
 	//filter array by book purchased number
@@ -88,9 +95,11 @@ class BooksIndex extends Component{
 			  return B - A;
 			});
 
-		this.setState({books: arr, filterSwitcher: true});
+		//set new filtered state
+		this.filterSetState(arr);
 	}
 
+	//handles Filter update
 	handleToUpdate(caseNumber){
 
 		switch (caseNumber){
@@ -116,9 +125,17 @@ class BooksIndex extends Component{
 			break;
 
 		}
-
 	}
-	
+
+	//handle search 
+	handleSearch(){
+		console.log('search is done');
+	}
+
+	//handle reset
+	handleReset(){
+		console.log('reset is done');
+	}
 
 
 	render(){		
@@ -127,7 +144,18 @@ class BooksIndex extends Component{
 			<div className="row">
 
 				{/* sortig component */}
-				<SortFilters handleToUpdate = {this.handleToUpdate.bind(this)}></SortFilters>
+				<div className="row">
+					<div className="col-md-3"><SortFilters handleToUpdate = {this.handleToUpdate.bind(this)}></SortFilters></div>
+					<div className="col-md-9">
+						<div className="input-group">
+							<input type="text" className="form-control" id="search" placeholder="Search Book by Title" />
+							<span className="input-group-btn">
+                        		<button type="button" className="btn btn-success" onClick={this.handleSearch}>Search</button>
+                        		<button type="button" className="btn btn-danger" onClick={this.handleReset}>Reset</button>
+                    		</span>
+                    	</div>
+                    </div>
+				</div>
 
 				{ this.state.books == undefined ? <Preloader /> : <RenderBooks books={this.state.books} />}
 
