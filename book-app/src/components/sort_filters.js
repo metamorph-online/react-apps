@@ -28,7 +28,7 @@ export default class SortFilters extends Component{
 				    <option value='2'>Book Title</option>
 				    <option value='3'>Price: Lower to Higher</option>
 				    <option value='4'>Price: Higher to Lower</option>
-				    <option value='5'>Number of Purchases</option>
+				    <option value='5'>Most Popular</option>
 				  </select>
 				</div>
 			</div>
