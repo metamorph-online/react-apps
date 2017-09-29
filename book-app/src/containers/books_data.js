@@ -23,7 +23,10 @@ class BooksIndex extends Component{
 		//if filters change state parent component should update the RenderBooks props
 		//filter state, needed to update component on filter update
 		var handleToUpdate	= this.handleToUpdate.bind(this);
-		this.state = {stateSwitcher: false};
+		this.state = {stateSwitcher: false, searchResults: ''};
+
+		var visible = false;
+
 	}
 
 	//check if promise was resolved and assigned to the state
@@ -127,6 +130,27 @@ class BooksIndex extends Component{
 		}
 	}
 
+	//display search helper
+	searchHelper(){
+
+	    this.setState(prevState => ({
+	        stateSwitcher: !prevState.stateSwitcher,
+	        searchResults : 'Here Comes Search'
+	    }));
+
+	    this.visible = true;
+		
+	}
+
+	searchHelperOff(){
+		this.setState(prevState => ({
+	        stateSwitcher: !prevState.stateSwitcher,
+	        searchResults : ''
+	    }));
+
+		this.visible = false;
+	}
+
 	//handle search 
 	handleSearch(){
 		console.log('search is done');
@@ -148,10 +172,10 @@ class BooksIndex extends Component{
 					<div className="col-md-3"><SortFilters handleToUpdate = {this.handleToUpdate.bind(this)}></SortFilters></div>
 					<div className="col-md-9">
 						<div className="input-group">
-							<input type="text" className="form-control" id="search" placeholder="Search Book by Title" />
+							<input type="text" className="form-control" id="search" placeholder="Search Book by Title" onFocus={this.searchHelper.bind(this)} onBlur={this.searchHelperOff.bind(this)} />
+							<div className="search-helper" style={this.visible ? {'display': 'block'} : {'display': 'none'}}>{this.state.searchResults}</div>
 							<span className="input-group-btn">
-                        		<button type="button" className="btn btn-success" onClick={this.handleSearch}>Search</button>
-                        		<button type="button" className="btn btn-danger" onClick={this.handleReset}>Reset</button>
+                        		<button type="button" className="btn btn-success" onClick={this.handleSearch}>Search</button>          
                     		</span>
                     	</div>
                     </div>

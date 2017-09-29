@@ -102,3 +102,21 @@
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
+
+.input-group{
+	position: relative;
+}
+
+.search-helper{
+	position: absolute;
+	top: 40px;
+	left: 0px;
+	background: #fff;
+	border: 1px solid #ddd;
+	width: 100%;
+	display: none;
+	-webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding: 5px;
+}
