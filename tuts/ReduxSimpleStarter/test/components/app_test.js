@@ -12,9 +12,9 @@ describe('App' , () => {
 
 
   //use 'it' to test the single attribute of a target
-  it('show the correct text', () => {
+  it('show a comment box', () => {
 
   	//use 'expect' to make 'assertion' about target
-    expect(component).to.contain('React simple starter');
+    expect(component.find('.comment-box')).to.exist;
   });
 });
