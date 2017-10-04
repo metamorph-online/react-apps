@@ -27,6 +27,7 @@ export default class Search extends Component{
 	    document.removeEventListener('click', this.handleClickOutside.bind(this), true);
 	}
 
+	//we need to know when the user clicks outside search to hide helping dropdown
 	handleClickOutside(event) {
 	    const domNode = ReactDOM.findDOMNode(this);
 
@@ -93,10 +94,7 @@ export default class Search extends Component{
 		console.log('search is done');
 	}
 
-	//handle reset
-	handleReset(){
-		console.log('reset is done');
-	}
+
 
 	render(){
 

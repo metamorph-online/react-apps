@@ -1,0 +1,51 @@
+body, html {
+  height: 100%; }
+
+.my-height {
+  height: 100%; }
+
+.my-input {
+  border: 1px solid #000 !important;
+  width: 300px !important; }
+
+body {
+  background: #eeeeee;
+  height: 100%; }
+  body > div, body > div > div, body > div > div > div {
+    height: 100%; }
+  body .first-row {
+    height: 100%; }
+  body .left-side {
+    background: #fff;
+    border-right: 3px solid #000;
+    width: 14%;
+    height: 100%;
+    float: left; }
+    body .left-side .top {
+      background: #597eaa;
+      padding-top: 65px; }
+      body .left-side .top .my-project-text {
+        background: #6fa8dc;
+        padding: 5px;
+        color: #fff; }
+  body .right-side {
+    width: 86%;
+    float: right; }
+  body .footer {
+    background: #cccccc;
+    text-align: center;
+    padding: 10px; }
+    body .footer a {
+      color: #676873; }
+  body .app-box {
+    border: 3px solid #000;
+    margin-top: 65px;
+    margin-left: 30px;
+    min-height: 500px;
+    background: #fff;
+    padding: 20px; }
+    body .app-box .app-box-title {
+      font-size: 30px;
+      margin-bottom: 30px; }
+
+/*# sourceMappingURL=styles.css.map */
