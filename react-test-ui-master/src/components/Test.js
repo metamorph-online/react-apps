@@ -18,7 +18,7 @@ class Test extends Component {
 					<div className="right-side">
 						<div className="app-box">
 							<div className="app-box-title">Project settings page</div>
-							
+
 							<div className="pt-form-group">
 								<label className="pt-label" for="name-input">Name</label>
 
@@ -28,11 +28,11 @@ class Test extends Component {
 							</div>
 
 							<div className="pt-form-group">
-							  	<label className="pt-label" for="example-form-group-input-b">Search Something</label>
+							  	<label className="pt-label" for="search-input">Search Something</label>
 							  <div className="pt-form-content">
 							    <div className="pt-input-group">
 							      <span className="pt-icon pt-icon-search"></span>
-							      <input id="example-form-group-input-b" className="pt-input my-input" type="text" placeholder="" dir="auto" />
+							      <input id="search-input" className="pt-input my-input" type="text" placeholder="" dir="auto" />
 							    </div>							    
 							  </div>
 							</div>

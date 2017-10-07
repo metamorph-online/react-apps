@@ -4,7 +4,7 @@ import CommentBox from '../../src/components/comment_box';
 
 describe('CommentBox', ()=>{
 
-	let component;
+	var component;
 
 	beforeEach(() => {
 
@@ -34,8 +34,9 @@ describe('CommentBox', ()=>{
 			expect(component.find('textarea')).to.have.value('new comment');
 		});
 
-		it('when submitted, clear the input', () => {
-
+		it('when submitted clear the input', () => {
+			component.simulate('submit');
+			expect(component.find('textarea')).to.have.value('');
 		});
 
 	});

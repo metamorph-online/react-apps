@@ -4,7 +4,7 @@ import App from '../../src/components/app';
 
 //use describe to group together similar tests
 describe('App' , () => {
-  let component;
+  var component;
 
   beforeEach(() => {
     component = renderComponent(App);
@@ -17,4 +17,10 @@ describe('App' , () => {
   	//use 'expect' to make 'assertion' about target
     expect(component.find('.comment-box')).to.exist;
   });
+
+  it('show a comment list', () => {
+
+  	expect(component.find('.comment-list')).to.exist;
+  });
+
 });
