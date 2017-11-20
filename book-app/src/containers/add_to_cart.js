@@ -14,7 +14,9 @@ class AddToCart extends Component{
 
 
 	addToCart(){
-		this.props.ToCart(this.props.book);
+
+		//need to pass added book and cart items to compare if book is already in the cart
+		this.props.ToCart(this.props.book, this.props.cart);
 	}
 	
 
@@ -30,7 +32,10 @@ class AddToCart extends Component{
 
 function mapStateToProps(state){
 
-	return{}
+	return{
+
+		cart: state.cart.cart
+	}
 }
 
 export default connect(mapStateToProps, {ToCart})(AddToCart);

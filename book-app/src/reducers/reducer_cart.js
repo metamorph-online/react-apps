@@ -1,5 +1,5 @@
-import {ADD_TO_CART} from '../actions/index';
-import {REMOVE_FROM_CART} from '../actions/index';
+import {ADD_TO_CART, REMOVE_FROM_CART} from '../actions/index';
+
 
 const CART_INITIAL_STATE = { cart: []};
 
@@ -10,8 +10,7 @@ export default function(state = CART_INITIAL_STATE, action){
 
 		//addig item to cart
 		case ADD_TO_CART:
-			let newBook = {book: action.payload, quantity: 1};
-			return  {...state, cart: state.cart.concat(newBook)}
+			return  {...state, cart: action.payload}
 
 		//remove item from cart
 		case REMOVE_FROM_CART:

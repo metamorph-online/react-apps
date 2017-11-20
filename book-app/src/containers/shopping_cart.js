@@ -27,7 +27,7 @@ class ShoppingCart extends Component{
 	//rendering shopping cart items
 	shoppingCart(){
 
-		console.log(this.props.cart.length);
+		//console.log(this.props.cart.length);
 
 		return(
 	
@@ -47,7 +47,7 @@ class ShoppingCart extends Component{
 
 	render(){
 
-		console.log(this.props.cart);
+		//console.log(this.props.cart);
 
 		//cart has state values
 		if(this.props.cart !== undefined && this.props.cart.length > 0){
