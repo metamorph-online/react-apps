@@ -1,12 +1,32 @@
 import axios from 'axios';
 
+import {writeToStorage, readFromStorage} from '../components/localStorage';
+
 export const GET_BOOKS = 'GET_BOOKS';
 export const ADD_TO_CART = 'ADD_TO_CART';
 export const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
 export const GET_BOOK = 'GET_BOOK';
+export const GET_LOCALSTORAGE_CART = 'GET_LOCALSTORAGE_CART';
 
 
 const ROOT_URL = 'http://localhost:3000';
+
+//get localStorage Cart 
+export function getlocalStorageCart() {
+
+	let myValue = [];
+
+	if(readFromStorage('cart') != undefined){
+
+		myValue = readFromStorage('cart');
+	}
+
+	return{
+		type: GET_LOCALSTORAGE_CART,
+		payload: myValue
+	}
+}
+
 
 //get all books from server
 export function getBooksData() {
@@ -48,6 +68,9 @@ export function ToCart(book, shopping_cart){
 		//if book was found in the check we need to send new shopping cart array
 		if(bookExists == 1){
 
+			//writing the new shopping cart to localStorage
+			writeToStorage(new_shopping_cart, 'cart');
+
 			return{
 				type: ADD_TO_CART,
 				payload: new_shopping_cart
@@ -57,9 +80,14 @@ export function ToCart(book, shopping_cart){
 			else // if book was not found in the shopping cart array we add the book to the end of the old shopping cart array
 		{
 
+			let cart_new_book = shopping_cart.concat({book, quantity: 1});
+
+			//writing the new shopping cart to localStorage
+			writeToStorage(cart_new_book, 'cart');
+
 			return{
 				type: ADD_TO_CART,
-				payload: shopping_cart.concat({book, quantity: 1})
+				payload: cart_new_book
 			}
 
 		}
@@ -67,10 +95,15 @@ export function ToCart(book, shopping_cart){
 		
 	} else {
 
+		let cart_new_book = shopping_cart.concat({book, quantity: 1});
+
+		//writing the new shopping cart to localStorage
+		writeToStorage(cart_new_book, 'cart');
+
 		//add first book if cart is empty
 		return{
 			type: ADD_TO_CART,
-			payload: shopping_cart.concat({book, quantity: 1})
+			payload: cart_new_book
 		}
 
 	}
@@ -78,10 +111,16 @@ export function ToCart(book, shopping_cart){
 
 
 //remove book from cart
-export function OutCart(book){
+export function OutCart(arr, book){
+
+	arr = arr.filter((element) => element.book.id !== book.id);
+
+	//writing the new shopping cart to localStorage
+	writeToStorage(arr, 'cart');
+
 	return{
 		type: REMOVE_FROM_CART,
-		payload: book
+		payload: arr
 	}
 }
 

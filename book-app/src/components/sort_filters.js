@@ -8,7 +8,7 @@ export default class SortFilters extends Component{
 	constructor(props){
 		super(props);
 		this.filterChange = this.filterChange.bind(this);
-		this.state = {value: '1'};
+		this.state = {value: '1'}; //default value
 	}
 
 	filterChange(event){

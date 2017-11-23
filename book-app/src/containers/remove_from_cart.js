@@ -12,7 +12,7 @@ class RemoveFromCart extends Component{
 
 
 	removeFromCart(){
-		this.props.OutCart(this.props.book);
+		this.props.OutCart(this.props.cart, this.props.book);
 	}
 	
 
@@ -28,7 +28,9 @@ class RemoveFromCart extends Component{
 
 function mapStateToProps(state){
 
-	return{}
+	return {
+		cart: state.cart.cart
+	}
 }
 
 export default connect(mapStateToProps, {OutCart})(RemoveFromCart);
