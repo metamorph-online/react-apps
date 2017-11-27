@@ -6,7 +6,9 @@ export default class LoginBox extends Component{
 
 	render(){
         return (
-            <Facebook />
+            <div className="row">
+            	<div className="col-md-12"><Facebook /></div>
+            </div>
         );
 	}
 

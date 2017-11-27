@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import Preloader from '../components/preloader';
+import UserInfo from '../components/user_info';
 
 
 export default class Facebook extends Component {
@@ -63,8 +65,8 @@ export default class Facebook extends Component {
 	    fetch: () => {
 	        return new Promise((resolve, reject) => {
 	            FB.api(
-	                '/me', 
-	                {fields: 'first_name, last_name, gender'},
+	                '/me',
+	                {fields: 'first_name, last_name, gender, picture.type(square).width(100).height(100)'},
 	                response => response.error ? reject(response) : resolve(response)
 	            );
 	        });
@@ -154,15 +156,16 @@ export default class Facebook extends Component {
 
     render(){
 
-    	console.log(this.state);
+    	
 		
-		const loading = this.state.loading ? <p>Please wait, profile is loading ...</p> : null;
+		const loading = this.state.loading ? <Preloader /> : null;
         const message = this.state.status === 'connected'
             ? (<div>
-                Hi {this.state.data.first_name}! 
-                <button onClick={this.doLogout.bind(this)}>Logout</button>
+
+            	<UserInfo userinfo={this.state.data}></UserInfo>
+                
               </div>)
-            : (<button onClick={this.doLogin.bind(this)}>Login</button>);
+            : (<button className="btn-facebook btn-lg btn" onClick={this.doLogin.bind(this)}><i className="fa fa-facebook fa-fw"></i>Login with Facebook</button>);
         return (
             <div>
                 {message}

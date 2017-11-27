@@ -74,25 +74,33 @@ class ShoppingCart extends Component{
 		if(this.props.cart !== undefined && this.props.cart.length > 0){
 
 			return(
-						<div className="shopping-cart">
-							<ul className="list-group">
-								<li className="list-group-item active"><h5>Shopping Cart</h5></li>
-								{this.shoppingCart()}
-								<li className="list-group-item">Total: $ {this.totalCart()}</li>
-							</ul>				
+					<div className="row">
+						<div className="col-md-12">
+							<div className="shopping-cart">
+								<ul className="list-group">
+									<li className="list-group-item active"><h5>Shopping Cart</h5></li>
+									{this.shoppingCart()}
+									<li className="list-group-item">Total: $ {this.totalCart()}</li>
+								</ul>				
+							</div>
 						</div>
+					</div>
 				);
 			} else {
 
 				//cart is empty
 				return(
-						<div className="shopping-cart">
-							<ul className="list-group">
-								<li className="list-group-item active"><h5>Shopping Cart</h5></li>
-								<li className="list-group-item ">Your Cart is Empty</li>
-								<li className="list-group-item">Total: $ 0</li>
-							</ul>				
+					<div className="row">
+						<div className="col-md-12">
+							<div className="shopping-cart">
+								<ul className="list-group">
+									<li className="list-group-item active"><h5>Shopping Cart</h5></li>
+									<li className="list-group-item ">Your Cart is Empty</li>
+									<li className="list-group-item">Total: $ 0</li>
+								</ul>				
+							</div>
 						</div>
+					</div>
 				);
 
 			}
