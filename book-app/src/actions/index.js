@@ -2,14 +2,79 @@ import axios from 'axios';
 
 import {writeToStorage, readFromStorage} from '../components/localStorage';
 
-export const GET_BOOKS = 'GET_BOOKS';
-export const ADD_TO_CART = 'ADD_TO_CART';
-export const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
-export const GET_BOOK = 'GET_BOOK';
-export const GET_LOCALSTORAGE_CART = 'GET_LOCALSTORAGE_CART';
+export const GET_BOOKS = 'GET_BOOKS';   //get the books from db
+export const ADD_TO_CART = 'ADD_TO_CART';  //add book to cart
+export const REMOVE_FROM_CART = 'REMOVE_FROM_CART';  //remove book from cart
+export const GET_BOOK = 'GET_BOOK'; //get book info for the book page
+export const GET_LOCALSTORAGE_CART = 'GET_LOCALSTORAGE_CART'; //get cart from localStorage
+export const LOGIN = 'LOGIN';  //get the login state
+export const LOGINCHECK = 'LOGINCHECK';  //check if user is logged in
+export const LOGOUT = 'LOGOUT'; //logout user from facebook
+
 
 
 const ROOT_URL = 'http://localhost:3000';
+
+//promises object for login
+const promises = {
+
+	    init: () => {
+	        return new Promise((resolve, reject) => {
+	            if (typeof FB !== 'undefined') {
+	                resolve();
+	            } else {
+	                window.fbAsyncInit = () => {
+	                    FB.init({
+	                        appId      : '153646268585020',
+	                        cookie     : true, 
+	                        xfbml      : true,  
+	                        version    : 'v2.5'
+	                    });
+	                    resolve();
+	                };
+	                (function(d, s, id) {
+	                    var js, fjs = d.getElementsByTagName(s)[0];
+	                    if (d.getElementById(id)) return;
+	                    js = d.createElement(s); js.id = id;
+	                    js.src = "//connect.facebook.net/en_US/sdk.js";
+	                    fjs.parentNode.insertBefore(js, fjs);
+	                }(document, 'script', 'facebook-jssdk'));
+	            }
+	        });
+	    },
+	    checkLoginState: () => {
+	        return new Promise((resolve, reject) => {
+	            FB.getLoginStatus((response) => {
+	                response.status === 'connected' ? resolve(response) : reject(response);
+	            });
+	        });
+	    },
+	    login: () => {
+	        return new Promise((resolve, reject) => {
+	            FB.login((response) => {
+	                response.status === 'connected' ? resolve(response) : reject(response);
+	            });
+	        });
+	    },
+	    logout: () => {
+	        return new Promise((resolve, reject) => {
+	            FB.logout((response) => {
+	                response.authResponse ? resolve(response) : reject(response);
+	            });
+	        });
+	    },
+	    fetch: () => {
+	        return new Promise((resolve, reject) => {
+	            FB.api(
+	                '/me',
+	                {fields: 'first_name, last_name, gender, picture.type(square).width(100).height(100)'},
+	                response => response.error ? reject(response) : resolve(response)
+	            );
+	        });
+	    }
+	}
+
+
 
 //get localStorage Cart 
 export function getlocalStorageCart() {
@@ -131,6 +196,84 @@ export function fetchBook(id){
 	return {
 		type: GET_BOOK,
 		payload: request
+	}
+}
+
+
+//get the facebook login
+export function fbLogIn(){
+
+	let response =  promises.init()
+        .then(
+            promises.login,
+            error => { throw error; },
+            console.log('login')
+        )
+        .then(
+            response = promises.fetch,
+            error => { throw error; },
+            console.log('fetch user')
+        )
+        .catch((error) => { 
+            console.warn(error); 
+        });
+
+    console.log(response);
+
+    return {
+		type: LOGIN,
+	    payload: response
+	}
+
+}
+
+//check if user is logged in
+export function fbLoginStatusCheck(){
+
+	let response = '';
+
+	promises.init()
+        .then(
+            promises.checkLoginState,
+            error => { throw error; }
+        )        
+        .then(
+            response = promises.fetch,
+            error => { throw error; }
+        )        
+        .catch((error) => { 
+            console.warn(error); 
+    });
+
+    return {
+		type: LOGINCHECK,
+		payload: response
+	}
+}
+
+//get the facebook logout
+export function fbLogOut(){
+
+	let response = 'logout';
+
+	promises.init()
+
+        .then(
+         	promises.checkLoginState,
+        	error => { throw error; }
+        )
+        .then(
+            promises.logout,
+            error => { throw error; }
+        )
+        
+        .catch(error => { 
+            console.warn(error); 
+    });
+
+    return {
+		type: LOGOUT,
+		payload: response
 	}
 }
 

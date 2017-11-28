@@ -7,6 +7,7 @@ import AddToCart from '../containers/add_to_cart';
 import Preloader from '../components/preloader';
 import renderHTML from 'react-render-html'; //for description generate
 import {Link} from 'react-router';
+import Facebook from './facebook';
 
 export class BookShow extends Component{
 
@@ -42,6 +43,11 @@ export class BookShow extends Component{
 					</li>
 				
 				</ul>
+
+				<div className="row">
+					<div className="col-md-12"><Facebook></Facebook></div>
+				</div>
+
 			</div>
 		)
 	}

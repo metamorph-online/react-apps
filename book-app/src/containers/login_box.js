@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Facebook from '../components/facebook';
+import Facebook from './facebook';
 
 
 export default class LoginBox extends Component{	

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Preloader from '../components/preloader';
 import UserInfo from '../components/user_info';
+import _ from 'lodash';
 
 
 export default class Facebook extends Component {
@@ -159,7 +160,7 @@ export default class Facebook extends Component {
     	
 		
 		const loading = this.state.loading ? <Preloader /> : null;
-        const message = this.state.status === 'connected'
+        const message = this.state.status === 'connected' && !_.isEmpty(this.state.data)
             ? (<div>
 
             	<UserInfo userinfo={this.state.data}></UserInfo>
