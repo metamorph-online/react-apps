@@ -43,11 +43,10 @@ const promises = {
 	        });
 	    },
 	    checkLoginState: () => {
-	        return new Promise((resolve, reject) => {
+
 	            FB.getLoginStatus((response) => {
 	                response.status === 'connected' ? resolve(response) : reject(response);
 	            });
-	        });
 	    },
 	    login: () => {
 	        return new Promise((resolve, reject) => {
@@ -234,8 +233,8 @@ export function fbLoginStatusCheck(){
 
 	promises.init()
         .then(
-            promises.checkLoginState,
-            error => { throw error; }
+            promises.login,
+            error => { throw error }
         )        
         .then(
             response = promises.fetch,

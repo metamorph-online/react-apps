@@ -12,21 +12,30 @@ class Facebook extends Component {
 		super(props);
 
 		this.state = {
-	        status: 'unknown',
-	        loading: false,
-	        data: {}
+	        loading: false
 		}
 	}
 
-	
+	componentWillUpdate(nextProps, nextState){
+
+        //if login props is not empty we need to turn loading off
+        if(!_.isEmpty(nextProps.login) && nextState.loading == true){
+            this.setState({ loading: false})
+        }
+    }
+
+    //calls fbLogIn action
     doLogin() {
         this.setState({
             loading: true
         }); 
 
         this.props.fbLogIn();
+
+       
     }
 
+    //calls doLogout action
     doLogout() {
 
         this.setState({
@@ -36,13 +45,9 @@ class Facebook extends Component {
         this.props.fbLogOut();   
     }
 
+    //calls fbLoginStatusCheck
     checkStatus() {
-        this.setState({
-            loading: true        
-        }) 
-
-        this.props.fbLoginStatusCheck();
-
+        this.props.fbLogIn();
     }
 
     render(){
