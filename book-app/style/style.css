@@ -144,8 +144,29 @@
 	color: #fff!important;
 }
 
-.user-img, .user-greeting, .user-logout{
+.user-img, .user-greeting, .user-logout, .user-info{
 	display: block;
 	float: left;
 	padding: 5px;
+}
+
+.user-img{
+	width: 60px;
+}
+
+.user-info{
+	width: calc(100% - 60px);
+}
+
+.user-logout{
+	width: 100%;
+}
+
+.fb-login-box{
+	max-width: 250px
+}
+
+.comment-form-box .btn {
+    margin: 5px!important;
+
 }

@@ -8,6 +8,7 @@ import Preloader from '../components/preloader';
 import renderHTML from 'react-render-html'; //for description generate
 import {Link} from 'react-router';
 import Facebook from './facebook';
+import CommentForm from './comment_form';
 
 export class BookShow extends Component{
 
@@ -44,10 +45,17 @@ export class BookShow extends Component{
 				
 				</ul>
 
+				<div className="row">{/* comments here */}</div>
+
 				<div className="row">
-					<div className="col-md-12"><Facebook></Facebook></div>
+					<div className="fb-login-box"><Facebook></Facebook></div>
 				</div>
 
+				<div className="row">
+					<div className="ocol-md-12">
+						<CommentForm></CommentForm>
+					</div>
+				</div>
 			</div>
 		)
 	}

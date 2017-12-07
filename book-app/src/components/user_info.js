@@ -7,6 +7,12 @@ export default class UserInfo extends Component {
 		super(props);
 	}
 
+	handleLogout(){
+
+		this.props.userLogout()
+
+	}
+
 	 render(){
 
 	 	//this.doLogout.bind(this)
@@ -14,8 +20,10 @@ export default class UserInfo extends Component {
 	 	return(
 	 		<div>
 	 			<div className="user-img"><img src={this.props.userinfo.picture.data.url} width="60px" /></div>
-	 			<div className="user-greeting">Welcome {this.props.userinfo.first_name} {this.props.userinfo.last_name}!</div> 
-             	<div className="user-logout"><button onClick={()=>{return null}}>Logout</button></div>
+	 			<div className="user-info">
+	 				<div className="user-greeting">{this.props.userinfo.first_name} {this.props.userinfo.last_name}!</div> 
+             		<div className="user-logout"><button onClick={this.handleLogout.bind(this)}>Logout</button></div>
+	 			</div>	 			
             </div>
 	 	);
 	 }

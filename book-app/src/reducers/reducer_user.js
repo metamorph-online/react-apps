@@ -11,6 +11,9 @@ export default function(state = USER_INITIAL_STATE, action){
 		//get user data from action
 		case LOGIN:
 			return  {...state, user: action.payload}
+
+		case LOGOUT:
+			return {...state, user: []}
 		
 	}
 

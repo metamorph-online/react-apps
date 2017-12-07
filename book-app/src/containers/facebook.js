@@ -4,75 +4,96 @@ import UserInfo from '../components/user_info';
 import _ from 'lodash';
 import {connect} from 'react-redux';
 import {fbLogIn, fbLoginStatusCheck, fbLogOut} from '../actions/index';
+import {FB_promises} from '../components/fb_connect_api';
 
 
 class Facebook extends Component {
 
 	constructor(props){
 		super(props);
-
-		this.state = {
-	        loading: false
-		}
 	}
-
-	componentWillUpdate(nextProps, nextState){
-
-        //if login props is not empty we need to turn loading off
-        if(!_.isEmpty(nextProps.login) && nextState.loading == true){
-            this.setState({ loading: false})
-        }
-    }
 
     //calls fbLogIn action
     doLogin() {
-        this.setState({
-            loading: true
-        }); 
 
-        this.props.fbLogIn();
+        let response =  FB_promises.init()
+        .then(
+            FB_promises.login,
+            error => { throw error; },
+            console.log('login')
+        )
+        .then(
+            response = FB_promises.fetch,
+            error => { throw error; },
+            console.log('fetch user')
+        )
+        .catch((error) => { 
+            console.warn(error); 
+        });
 
+        this.props.fbLogIn(response);
        
     }
 
     //calls doLogout action
     doLogout() {
 
-        this.setState({
-            loading: true
+        FB_promises.init()
+
+            .then(
+                FB_promises.logout,
+                error => { throw error; }
+            )
+            
+            .catch(error => { 
+                console.warn(error); 
         });
+
+        console.log(this.props.login);
 
         this.props.fbLogOut();   
     }
 
     //calls fbLoginStatusCheck
     checkStatus() {
-        this.props.fbLogIn();
+
+        let response = '';
+
+        FB_promises.init()
+            .then(
+                FB_promises.checkLoginState,
+                error => { throw error }
+            )        
+            .then(
+                response = FB_promises.fetch,
+                error => { throw error; }
+            )        
+            .catch((error) => { 
+                console.warn(error); 
+        });
+
+        this.props.fbLoginStatusCheck(response);
     }
 
-    render(){
+    render(){    			
 
-    	
-		
-		const loading = this.state.loading ? <Preloader /> : null;
         const message = !_.isEmpty(this.props.login)
             ? (<div>
 
-            	<UserInfo userinfo={this.props.login}></UserInfo>
+            	<UserInfo userLogout={this.doLogout.bind(this)} userinfo={this.props.login}></UserInfo>
                 
               </div>)
             : (<button className="btn-facebook btn-lg btn" onClick={this.doLogin.bind(this)}><i className="fa fa-facebook fa-fw"></i>Login with Facebook</button>);
         return (
             <div>
                 {message}
-                {loading}
             </div>
         );
 	}
 };
 
 function mapStateToProps(state){
-    console.log(state);
+
 	return{
 
 		login: state.user.user
