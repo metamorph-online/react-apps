@@ -53,7 +53,7 @@ export class BookShow extends Component{
 
 				<div className="row">
 					<div className="ocol-md-12">
-						<CommentForm></CommentForm>
+						<CommentForm book_id={this.props.params.id}></CommentForm>
 					</div>
 				</div>
 			</div>

@@ -1,0 +1,157 @@
+{
+  "books":
+   
+    [
+        {
+        "id" : "978-0641723445",
+        "cat" : ["book","hardcover"],
+        "name" : "Python Crash Course: A Hands-On, Project-Based Introduction to Programming",
+        "author" : "Eric Matthes",
+        "sequence_i" : 1,
+        "genre_s" : "Web Development & Design Programming",
+        "inStock" : true,
+        "price" : 24.17,
+        "purchased" : 9,
+        "pages_i" : 384,
+        "cover_img": "http://localhost:8080/images/book_cover1.jpg",
+        "description" : "Python Crash Course is a fast-paced, thorough introduction to programming with Python that will have you writing programs, solving problems, and making things that work in no time.<br /><br />In the first half of the book, you'll learn about basic programming concepts, such as lists, dictionaries, classes, and loops, and practice writing clean and readable code with exercises for each topic. You'll also learn how to make your programs interactive and how to test your code safely before adding it to a project. In the second half of the book, you'll put your new knowledge into practice with three substantial projects: a Space Invaders-inspired arcade game, data visualizations with Python's super-handy libraries, and a simple web app you can deploy online.<br /><br />As you work through Python Crash Course, you'll learn how to:<br /><br />Use powerful Python libraries and tools, including matplotlib, NumPy, and Pygal<br />Make 2D games that respond to keypresses and mouse clicks, and that grow more difficult as the game progresses<br />Work with data to generate interactive visualizations<br />Create and customize simple web apps and deploy them safely online<br />Deal with mistakes and errors so you can solve your own programming problems<br /><br />If you've been thinking seriously about digging into programming, Python Crash Course will get you up to speed and have you writing real programs fast. Why wait any longer? Start your engines and code!"
+      }
+    ,
+      {
+        "id" : "978-1423103349",
+        "cat" : ["book","paperback"],
+        "name" : "CSS for Babies (Code Babies)",
+        "author" : "Sterling Children's",
+        "sequence_i" : 2,
+        "genre_s" : "Web Development",
+        "inStock" : true,
+        "price" : 16.49,
+        "purchased" : 23,
+        "pages_i" : 304,
+        "cover_img": "http://localhost:8080/images/book_cover2.jpg",
+        "description" : "CODING FOR KIDS . . . <br />Because it’s never too early to start developing!<br /><br />Coding and web-design skills are becoming more and more important in our technological world. These concept books will familiarize young ones with the kind of shapes and colors that make up web-based programming language and give them the head start they need.<br />Show your little ones how to display HTML elements properly with CSS (Cascading Style Sheets) and familiarize them with the visual patterns and symbols that make up the essential building blocks of the web. This beautiful book is a colorful introduction to coding and the web, and is the perfect gift for any technologically minded family."
+      }
+    ,
+      {
+        "id" : "978-1857995879",
+        "cat" : ["book","paperback"],
+        "name" : "HTML and CSS: Design and Build Websites ",
+        "author" : "Jon Duckett",
+        "sequence_i" : 1,
+        "genre_s" : "Programming Languages",
+        "inStock" : true,
+        "price" : 27.07,
+        "purchased" : 2,
+        "pages_i" : 64,
+        "cover_img": "http://localhost:8080/images/book_cover3.jpg",
+        "description" : "A full-color introduction to the basics of HTML and CSS from the publishers of Wrox!<br />Every day, more and more people want to learn some HTML and CSS. Joining the professional web designers and programmers are new audiences who need to know a little bit of code at work (update a content management system or e-commerce store) and those who want to make their personal blogs more attractive. Many books teaching HTML and CSS are dry and only written for those who want to become programmers, which is why this book takes an entirely new approach.<br /><br />Introduces HTML and CSS in a way that makes them accessible to everyone—hobbyists, students, and professionals—and it’s full-color throughout<br />Utilizes information graphics and lifestyle photography to explain the topics in a simple way that is engaging<br />Boasts a unique structure that allows you to progress through the chapters from beginning to end or just dip into topics of particular interest at your leisure<br />This educational book is one that you will enjoy picking up, reading, then referring back to. It will make you wish other technical topics were presented in such a simple, attractive and engaging way!<br /><br />This book is also available as part of a set in hardcover - Web Design with HTML, CSS, JavaScript and jQuery"
+      
+      }
+    ,
+      {
+        "id" : "978-1933988177",
+        "cat" : ["book","paperback"],
+        "name" : "Clean Code: A Handbook of Agile Software Craftsmanship",
+        "author" : "Robert C. Martin",
+        "sequence_i" : 1,
+        "genre_s" : "Programming Languages",
+        "inStock" : true,
+        "price" : 39.99,
+        "purchased" : 11,
+        "pages_i" : 475,
+        "cover_img": "http://localhost:8080/images/book_cover4.jpg",
+        "description" : "Even bad code can function. But if code isn’t clean, it can bring a development organization to its knees. Every year, countless hours and significant resources are lost because of poorly written code. But it doesn’t have to be that way.<br> <br>Noted software expert Robert C. Martin presents a revolutionary paradigm with <i> <b>Clean Code: A Handbook of Agile Software Craftsmanship</b> </i>. Martin has teamed up with his colleagues from Object Mentor to distill their best agile practice of cleaning code “on the fly” into a book that will instill within you the values of a software craftsman and make you a better programmer—but only if you work at it.<br> <br>What kind of work will you be doing? You’ll be reading code—lots of code. And you will be challenged to think about what’s right about that code, and what’s wrong with it. More importantly, you will be challenged to reassess your professional values and your commitment to your craft.<br> <br> <i> <b>Clean Code</b> </i> is divided into three parts. The first describes the principles, patterns, and practices of writing clean code. The second part consists of several case studies of increasing complexity. Each case study is an exercise in cleaning up code—of transforming a code base that has some problems into one that is sound and efficient. The third part is the payoff: a single chapter containing a list of heuristics and “smells” gathered while creating the case studies. The result is a knowledge base that describes the way we think when we write, read, and clean code.<br> <br>Readers will come away from this book understanding<br> <ul> <li>How to tell the difference between good and bad code</li> <li>How to write good code and how to transform bad code into good code</li> <li>How to create good names, good functions, good objects, and good classes</li> <li>How to format code for maximum readability</li> <li>How to implement complete error handling without obscuring code logic</li> <li>How to unit test and practice test-driven development</li> </ul>This book is a must for any developer, software engineer, project manager, team lead, or systems analyst with an interest in producing better code.<br> <br>"
+      }
+    ,
+      {
+        "id" : "978-1935688131",
+        "cat" : ["book","paperback"],
+        "name" : "Head First Java, 2nd Edition 2nd Edition",
+        "author" : "Bert Bates",
+        "sequence_i" : 1,
+        "genre_s" : "Programming Languages",
+        "inStock" : true,
+        "price" : 28.47,
+        "purchased" : 87,
+        "pages_i" : 355,
+        "cover_img": "http://localhost:8080/images/book_cover5.jpg",
+        "description" : "Learning a complex new language is no easy task especially when it s an object-oriented computer programming language like Java.  You might think the problem is your brain. It seems to have a mind of its own, a mind that doesn't always want to take in the dry, technical stuff you're forced to study.<br><br> The fact is your brain craves novelty. It's constantly searching, scanning, waiting for something unusual to happen. After all, that's the way it was built to help you stay alive. It takes all the routine, ordinary, dull stuff and filters it to the background so it won't interfere with your brain's real work--recording things that matter. How does your brain know what matters? It's like the creators of the Head First approach say, suppose you're out for a hike and a tiger jumps in front of you, what happens in your brain? Neurons fire. Emotions crank up. Chemicals surge. That's how your brain knows.<br><br> And that's how your brain will learn Java. <em>Head First Java</em> combines puzzles, strong visuals, mysteries, and soul-searching interviews with famous Java objects to engage you in many different ways. It's fast, it's fun, and it's effective. And, despite its playful appearance, Head First Java is serious stuff: a complete introduction to object-oriented programming and Java.  You'll learn everything from the fundamentals to advanced topics, including threads, network sockets, and distributed programming with RMI.  And the new. second edition focuses on Java 5.0, the latest version of the Java language and development platform.  Because Java 5.0 is a major update to the platform, with deep, code-level changes, even more careful study and implementation is required.  So learning the Head First way is more important than ever.<br><br> If you've read a Head First book, you know what to expect--a visually rich format designed for the way your brain works. If you haven't, you're in for a treat. You'll see why people say it's unlike any other Java book you've ever read.<br><br> By exploiting how your brain works, <em>Head First Java</em> compresses the time it takes to learn and retain--complex information.  Its unique approach not only shows you what you need to know about Java syntax, it teaches you to think like a Java programmer. If you want to be bored, buy some other book. But if you want to understand Java, this book's for you.<br> <br>"
+      }
+    ,
+      {
+        "id" : "958-1935685678",
+        "cat" : ["book","paperback"],
+        "name" : "Introduction to Algorithms, 3rd Edition (MIT Press) ",
+        "author" : "Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein ",
+        "sequence_i" : 1,
+        "genre_s" : "Programming Languages",
+        "inStock" : true,
+        "price" : 71.26,
+        "purchased" : 32,
+        "pages_i" : 675,
+        "cover_img": "http://localhost:8080/images/book_cover6.jpg",
+        "description" : "Some books on algorithms are rigorous but incomplete; others cover masses of material but lack rigor.  <i>Introduction to Algorithms</i> uniquely combines rigor and comprehensiveness. The book covers a broad range of algorithms in depth, yet makes their design and analysis accessible to all levels of readers. Each chapter is relatively self-contained and can be used as a unit of study. The algorithms are described in English and in a pseudocode designed to be readable by anyone who has done a little programming. The explanations have been kept elementary without sacrificing depth of coverage or mathematical rigor.<br> <br>"
+      }
+    ,
+      {
+        "id" : "958-19356990608",
+        "cat" : ["book","paperback"],
+        "name" : "Computer Science Distilled: Learn the Art of Solving Computational Problems",
+        "author" : "Wladston Ferreira Filho",
+        "sequence_i" : 1,
+        "genre_s" : "Programming Languages",
+        "inStock" : true,
+        "price" : 22.50,
+        "purchased" : 4,
+        "pages_i" : 235,
+        "cover_img": "http://localhost:8080/images/book_cover7.jpg",
+        "description" : "A walkthrough of computer science concepts you must know. Designed for readers who don't care for academic formalities, it's a fast and easy computer science guide. It teaches the foundations you need to program computers effectively. After a simple introduction to discrete math, it presents common algorithms and data structures. It also outlines the principles that make computers and programming languages work.<br> <br>"
+      }
+    ,
+      {
+        "id" : "958-19356990468",
+        "cat" : ["book","paperback"],
+        "name" : "The Robots are Coming: A Human's Survival Guide to Profiting in the Age of Automation",
+        "author" : "John Pugliano",
+        "sequence_i" : 1,
+        "genre_s" : "Programming Languages",
+        "inStock" : true,
+        "price" : 9.99,
+        "purchased" : 21,
+        "pages_i" : 139,
+        "cover_img": "http://localhost:8080/images/book_cover8.jpg",
+        "description" : "<b>How you can survive (and even thrive) during the artificial intelligence-powered robot takeover of the workplace</b><br><br><br>Robots are coming for your job. Regardless of your profession, degree or experience, there is no escaping the automated future. However, you can take steps today that will guarantee you not only survive, but thrive in this new economy.<br><br><br><i>The Robots Are Coming</i> provides the first actionable guide to plan for and actually profit from these disruptive innovations. It offers an easy-to-understand overview of automation trends and explains what you need to know today to secure your future success, including how to:<br><br><br><b>• Understand potential job threats<br><br>• Develop irreplaceable skills<br><br>• Foster creative advantages<br><br>• Identify robot-proof careers<br><br>• Spot investment opportunities<br></b><br><br>Author John Pugliano, host of the popular Wealthsteading podcast, shows how to harness the uniquely human qualities that will give you the competitive edge over automation: creativity, ingenuity and entrepreneurship. If you want to defeat the robots, you need to have a battle plan.<br> <br>"
+      }
+    ,
+      {
+        "id" : "958-135356956778",
+        "cat" : ["book","paperback"],
+        "name" : "A Complete Guide to Programming in C++: This Title is Print on Demand",
+        "author" : "Ulla Kirch-Prinz, Peter Prinz",
+        "sequence_i" : 1,
+        "genre_s" : "Programming Languages",
+        "inStock" : true,
+        "price" : 289.99,
+        "purchased" : 17,
+        "pages_i" : 939,
+        "cover_img": "http://localhost:8080/images/book_cover9.jpg",
+        "description" : "<b>How you can survive (and even thrive) during the artificial intelligence-powered robot takeover of the workplace</b><br><br><br>Robots are coming for your job. Regardless of your profession, degree or experience, there is no escaping the automated future. However, you can take steps today that will guarantee you not only survive, but thrive in this new economy.<br><br><br><i>The Robots Are Coming</i> provides the first actionable guide to plan for and actually profit from these disruptive innovations. It offers an easy-to-understand overview of automation trends and explains what you need to know today to secure your future success, including how to:<br><br><br><b>• Understand potential job threats<br><br>• Develop irreplaceable skills<br><br>• Foster creative advantages<br><br>• Identify robot-proof careers<br><br>• Spot investment opportunities<br></b><br><br>Author John Pugliano, host of the popular Wealthsteading podcast, shows how to harness the uniquely human qualities that will give you the competitive edge over automation: creativity, ingenuity and entrepreneurship. If you want to defeat the robots, you need to have a battle plan.<br> <br>"
+      }
+    ,
+      {
+        "id" : "954-13575697697",
+        "cat" : ["book","paperback"],
+        "name" : "Python Machine Learning",
+        "author" : "Sebastian Raschka",
+        "sequence_i" : 1,
+        "genre_s" : "Programming Languages",
+        "inStock" : true,
+        "price" : 40.99,
+        "purchased" : 37,
+        "pages_i" : 319,
+        "cover_img": "http://localhost:8080/images/book_cover10.jpg",
+        "description" : "<p><b>Unlock deeper insights into Machine Leaning with this vital guide to cutting-edge predictive analytics</b></p><h2>About This Book</h2><ul><li>Leverage Python's most powerful open-source libraries for deep learning, data wrangling, and data visualization</li><li>Learn effective strategies and best practices to improve and optimize machine learning systems and algorithms</li><li>Ask – and answer – tough questions of your data with robust statistical models, built for a range of datasets</li></ul><h2>Who This Book Is For</h2><p>If you want to find out how to use Python to start answering critical questions of your data, pick up Python Machine Learning – whether you want to get started from scratch or want to extend your data science knowledge, this is an essential and unmissable resource.</p><h2>What You Will Learn</h2><ul><li>Explore how to use different machine learning models to ask different questions of your data</li><li>Learn how to build neural networks using Pylearn 2 and Theano</li><li>Find out how to write clean and elegant Python code that will optimize the strength of your algorithms</li><li>Discover how to embed your machine learning model in a web application for increased accessibility</li><li>Predict continuous target outcomes using regression analysis</li><li>Uncover hidden patterns and structures in data with clustering</li><li>Organize data using effective pre-processing techniques</li><li>Get to grips with sentiment analysis to delve deeper into textual and social media data</li></ul><h2>In Detail</h2><p>Machine learning and predictive analytics are transforming the way businesses and other organizations operate. Being able to understand trends and patterns in complex data is critical to success, becoming one of the key strategies for unlocking growth in a challenging contemporary marketplace. Python can help you deliver key insights into your data – its unique capabilities as a language let you build sophisticated algorithms and statistical models that can reveal new perspectives and answer key questions that are vital for success.</p><p>Python Machine Learning gives you access to the world of predictive analytics and demonstrates why Python is one of the world's leading data science languages. If you want to ask better questions of data, or need to improve and extend the capabilities of your machine learning systems, this practical data science book is invaluable. Covering a wide range of powerful Python libraries, including scikit-learn, Theano, and Pylearn2, and featuring guidance and tips on everything from sentiment analysis to neural networks, you'll soon be able to answer some of the most important questions facing you and your organization.</p><h2>Style and approach</h2><p>Python Machine Learning connects the fundamental theoretical principles behind machine learning to their practical application in a way that focuses you on asking and answering the right questions. It walks you through the key elements of Python and its powerful machine learning libraries, while demonstrating how to get to grips with a range of statistical models.</p><br> <br>"
+      }
+
+    ]
+}

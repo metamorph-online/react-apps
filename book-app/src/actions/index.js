@@ -10,7 +10,7 @@ export const GET_LOCALSTORAGE_CART = 'GET_LOCALSTORAGE_CART'; //get cart from lo
 export const LOGIN = 'LOGIN';  //get the login state
 export const LOGINCHECK = 'LOGINCHECK';  //check if user is logged in
 export const LOGOUT = 'LOGOUT'; //logout user from facebook
-
+export const ADD_COMMENT = 'ADD_COMMENT'; //add comment
 
 
 const ROOT_URL = 'http://localhost:3000';
@@ -43,6 +43,43 @@ export function getBooksData() {
 		payload: request
 	}
 }
+
+//get book from server by id
+export function fetchBook(id){
+	const request = axios.get(`${ROOT_URL}/books/${id}`);
+
+	return {
+		type: GET_BOOK,
+		payload: request
+	}
+}
+
+
+//add comment to db
+export function AddComment(bookID, myComment){
+
+	console.log(myComment);
+
+	let request = axios.delete({
+		method: 'DELETE',
+		url: `${ROOT_URL}/books/${bookID}`,
+		headers: { 'Content-Type': 'application/json' }
+	});
+
+	/* const request = axios.post({
+		method: 'post',
+		url: `${ROOT_URL}/books/${bookID}`,
+		data: { comment: myComment},
+		headers: { 'Content-Type': 'application/json' }
+	}); */
+
+
+	return{
+		type: ADD_COMMENT,
+		payload: false
+	}
+}
+
 
 //add the book to cart
 export function ToCart(book, shopping_cart){
@@ -126,16 +163,6 @@ export function OutCart(arr, book){
 	return{
 		type: REMOVE_FROM_CART,
 		payload: arr
-	}
-}
-
-//get book from server by id
-export function fetchBook(id){
-	const request = axios.get(`${ROOT_URL}/books/${id}`);
-
-	return {
-		type: GET_BOOK,
-		payload: request
 	}
 }
 

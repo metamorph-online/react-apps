@@ -1,15 +1,17 @@
 //component is used to add comments to the db
-
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {AddComment} from '../actions/index';
 
-export default class CommentForm extends Component{
+class CommentForm extends Component{
 
 	constructor(props){
 		super(props);
 
 		this.state = {
 			title: '',
-			comment: ''
+			comment: '',
+			message:''
 		}
 	}
 
@@ -21,8 +23,21 @@ export default class CommentForm extends Component{
 		})
 	}
 
+	submitHandler(e){
+		e.preventDefault();
+
+		let bookID = this.props.book_id,
+			myComment = JSON.stringify( {
+				title : this.state.title,
+				comment : this.state.comment
+			});
+
+		
+		this.props.AddComment(bookID, myComment);
+
+	}
+
 	onInputChange(e){
-		console.log(e.target.name);
 		this.setState({ [e.target.name]: e.target.value})
 	}
 
@@ -30,6 +45,7 @@ export default class CommentForm extends Component{
 
 		return(
 			<div className="comment-form-box">
+				<div>{this.state.message}</div>
 				<form>
 					<div className="form-group">
 						<input type="text" name="title" onChange={ (e) =>  this.onInputChange(e)} value={this.state.title} className="form-control" placeholder="Comment title" />
@@ -38,7 +54,7 @@ export default class CommentForm extends Component{
 						<textarea className="form-control" name="comment" onChange={ (e) =>  this.onInputChange(e)} value={this.state.comment} rows="3" placeholder="Comment"></textarea>
 					</div>
 					<div className="form-group">
-						<button  type="submit" className="btn btn-success">Submit</button>
+						<button  type="submit" className="btn btn-success" onClick={(e)=> this.submitHandler(e)}>Submit</button>
 						<button  type="button" className="btn btn-danger" onClick={ () => {this.onReset()} }>Reset</button>
 					</div>
 				</form>				
@@ -46,3 +62,13 @@ export default class CommentForm extends Component{
 		)
 	}
 }
+
+function mapStateToProps(state){
+	
+	return {
+		book: state.book.book
+	}
+	
+}
+
+export default connect(mapStateToProps, {AddComment})(CommentForm);
