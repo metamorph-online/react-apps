@@ -15,13 +15,15 @@ import reducers from './reducers';
 const logger = createLogger();
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise, logger)(createStore);
 
-ReactDOM.render(
+ReactDOM.render( 
   <Provider store={createStoreWithMiddleware(reducers)}>
 
     <Router history={browserHistory}>
 	    <Route path='/' component={App}>
-	      <IndexRoute component={IndexBooks} />
-	      <Route path="book/:id" component={BookShow}></Route>
+
+	    	<Route path="book/:id" component={BookShow} />
+	      	<IndexRoute component={IndexBooks} />      	
+
 	    </Route>
   </Router>
 

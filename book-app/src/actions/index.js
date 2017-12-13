@@ -13,7 +13,7 @@ export const LOGOUT = 'LOGOUT'; //logout user from facebook
 export const ADD_COMMENT = 'ADD_COMMENT'; //add comment
 
 
-const ROOT_URL = 'http://localhost:3000';
+const ROOT_URL = 'http://www.metamorphozis.com/bookshop/api/';
 
 
 //get localStorage Cart 
@@ -36,7 +36,7 @@ export function getlocalStorageCart() {
 //get all books from server
 export function getBooksData() {
 
-	const request = axios.get(`${ROOT_URL}/db/`);
+	const request = axios.get(`${ROOT_URL}`);
 
 	return{
 		type: GET_BOOKS,
@@ -60,11 +60,7 @@ export function AddComment(bookID, myComment){
 
 	console.log(myComment);
 
-	let request = axios.delete({
-		method: 'DELETE',
-		url: `${ROOT_URL}/books/${bookID}`,
-		headers: { 'Content-Type': 'application/json' }
-	});
+	let request = axios.post(`${ROOT_URL}/books/${bookID}`, myComment);
 
 	/* const request = axios.post({
 		method: 'post',

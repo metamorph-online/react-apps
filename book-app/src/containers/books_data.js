@@ -153,7 +153,7 @@ class BooksIndex extends Component{
 function mapStateToProps(state){
 
 	return {
-		books: state.books.all.books
+		books: state.books.all
 	}
 	
 }
